@@ -10,7 +10,7 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api_demo_1', '0003_auto_20170214_1133'),
+        ('archives', '0003_auto_20170214_1133'),
     ]
 
     operations = [
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=250, verbose_name='Name of Battalion')),
                 ('uuid', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),
                 ('slug', models.SlugField(editable=False, null=True)),
-                ('geospace', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='api_demo_1.Geospace')),
+                ('geospace', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='archives.Geospace')),
             ],
             options={
                 'db_table': 'battalions',
@@ -29,6 +29,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='battalion',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='battalions', to='api_demo_1.Battalion'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='battalions', to='archives.Battalion'),
         ),
     ]

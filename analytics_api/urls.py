@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from api_demo_1 import views as api_views
+from archives import views as api_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

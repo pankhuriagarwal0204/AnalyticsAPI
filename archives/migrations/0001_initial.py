@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=250, verbose_name='name of morcha')),
                 ('uuid', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),
                 ('slug', models.SlugField(editable=False, null=True)),
-                ('geospace', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='api_demo_1.Geospace')),
+                ('geospace', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='archives.Geospace')),
             ],
             options={
                 'db_table': 'morchas',
@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=250, verbose_name='name of post')),
                 ('uuid', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),
                 ('slug', models.SlugField(editable=False, null=True)),
-                ('geospace', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='api_demo_1.Geospace')),
+                ('geospace', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='archives.Geospace')),
             ],
             options={
                 'db_table': 'posts',
@@ -70,16 +70,16 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='morcha',
             name='post',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='morchas', to='api_demo_1.Post'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='morchas', to='archives.Post'),
         ),
         migrations.AddField(
             model_name='intrusion',
             name='morcha',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='morcha', to='api_demo_1.Morcha'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='morcha', to='archives.Morcha'),
         ),
         migrations.AddField(
             model_name='intrusion',
             name='post',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='post', to='api_demo_1.Post'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='post', to='archives.Post'),
         ),
     ]
