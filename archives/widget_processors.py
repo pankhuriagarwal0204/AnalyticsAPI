@@ -4,9 +4,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Count
 from django.db.models import Q
 from django.db.models.functions import ExtractHour
-from rest_framework import status
-from rest_framework.response import Response
-
 from models import Intrusion, Morcha, Post, Battalion
 import calendar_utils
 import serializers

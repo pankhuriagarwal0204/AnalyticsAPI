@@ -66,4 +66,26 @@ class LongestIntrusionSerializer(serializers.ModelSerializer):
                   'non_human_intrusion_datetime', 'duration', 'morcha', 'morcha')
 
 
+class WeaksignalSerializer(serializers.ModelSerializer):
+    unit = DeviceSerializer()
+    class Meta:
+        model = Weaksignal
+        fields = ('unit', 'start', 'end')
+
+
+class OfflineSerializer(serializers.ModelSerializer):
+    unit = DeviceSerializer()
+    class Meta:
+        model = Offline
+        fields = ('unit', 'start', 'end', 'duration')
+
+
+class BackupSerializer(serializers.ModelSerializer):
+    unit = DeviceSerializer()
+    class Meta:
+        model = Backup
+        fields = ('unit', 'start', 'end', 'duration')
+
+
+
 
