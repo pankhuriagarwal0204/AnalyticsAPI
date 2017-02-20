@@ -96,6 +96,6 @@ class PostLiveView(viewsets.ViewSet):
         if error:
             return Response(message, status=status.HTTP_400_BAD_REQUEST)
         else:
-            self.widgets.get_total_devices()
+            #self.widgets.get_total_devices()
             return Response('found')
 
